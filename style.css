@@ -19,8 +19,6 @@
 body{
     background: var(--bg-color);
     color: var(--text-color);
-    
-
 }
 
 header {
@@ -84,7 +82,7 @@ header .logo img{
 }
 
 .nav-btn:hover{
-    transform:translateY(-3px);     /*sign in bt change when hover*/
+    transform:translateX(-3px);     /*sign in bt change when hover*/
     border: 2px solid var(--main-color);
     color: var(--main-color);
 
