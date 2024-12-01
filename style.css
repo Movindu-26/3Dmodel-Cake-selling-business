@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white-alpha-40: rgba(255,255,255,0.40);      /*  variables */
+    --white-alpha-25: rgba(255,255,255,0.25);
+    --backdrop-filter-blur: blur(50px);
+    --col: #060270;;
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+}
+.message{
+    text-align: center;
+    margin: 2rem auto;
+    font-size: 20px;
+    background: var(--col);
+    color: #fff;
+    width: 50vw;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.message i{
+    cursor: pointer;
+    float: right;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* register interface */
+.from-container{
+    background-image: url(images/pexels-vrnchndk-5140055.jpg);
+    
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* form */
+.from-container form{
+    width: 50vw;
+    height: auto;
+    margin: 0 auto;    
+    padding: 2rem;
+    background: var(--white-alpha-25);
+    /* border: 1px solid var(--white-alpha-40); */
+    backdrop-filter: var(--backdrop-filter-blur);
+    border-radius: 10px;
+}
+
+
+form input, 
+textarea{
+    font-family: "Source Code Pro", sans-serif;;
+    width: 100%;
+    background: var(--white-alpha-25);
+    padding: .7rem 1.4rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: .5rem 0;
+    padding-left: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+
+}
+/* register now button */
+form .btn{
+    cursor: pointer;
+    background: #153e52;
+    color: #fff;
+    text-transform: uppercase;
+    transition: all .6s ease;
+}
+
+form .btn:hover{
+    transform:translateY(-5px);
+    background: transparent;
+    border:  2px solid var(--col);
+    color: var(--col);
+}
+
+/* register now */
+.from-container p.reg{
+    font-family: "Crimson Text", serif;
+    text-align: center;
+    margin: 1rem;
+    font-weight: 800;
+    font-size: 300%;
+    color:rgb(23, 23, 88) ;
+    
+}
+
+
+
+/*-----------admin header----------- */
+header{
+    background: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.flex{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+
+}
+
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #aa4ff3;
+
+}
+
+.logo span{
+    color: #e382c5;
+}
+
+.navbar a{
+    margin: 0 1rem;
+    font-size: 1rem;
+    color: #aa4ff3;
+    text-transform: uppercase;
+
+}
+.navbar a:hover,
+.header .icons i:hover{
+    color: #c7b3f5;
+}
+.header .icons{
+    display: flex;
+}
+
+.header .icons i{
+    margin-left: 1.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #aa4ff3;
+}
+
+#menu-btn{
+    display: none;
+}
+.header .user-box{
+    position: absolute;
+    top: 150%;
+    right: -10%;
+    width: 18rem;
+    padding: .7rem 1rem;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    text-transform: capitalize;
+    color: #555;
+    font-size: 12px;
+    display: none;
+    transform: .5s;
+}
+
+.header .user-box.active{
+    display: block;
+
+}
+
+.header .user-box span{
+    text-transform: capitalize;
+    color: #aa4ff3;
+    font-size: 14px;
+}
+
+.logout-btn{
+    background: #c7b3f555;
+    width: 14rem;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    color: #aa4ff3;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+/*---admin num of user num of pending----*/
+.title{
+    font-family: "Roboto Slab", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    color: #153e52;
+}
+.box-container{
+    padding: 2% 8%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+    justify-content: center;
+    align-items: center;
+}
+.box-container .box{
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    background: var(--white-alpha-25);
+    border: 2px solid var(--white-alpha-40);
+    margin: 1rem;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+.box-container .box h3{
+    font-family: "Quantico", sans-serif;
+    font-size: 3rem;
+    color: #153e52;
+}
+
+.box-container .box p{
+    font-size: 18px;
+    text-transform:capitalize;
+    margin: 1rem 0;
+}
+
+/*-------------add product page---------------*/
+
+.add-products, .show-products{
+    background-image: url('images/pexels-vrnchndk-5140055.jpg');
+    background-attachment: fixed;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
+}
+
+.add-products form{
+    width: 50vw;
+    margin:  auto;
+    background:whitesmoke;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: .5px solid black;
+
+}
+
+.add-products form label {
+    text-transform: capitalize;
+    color: var(--col);
+}
+
+.add-products form textarea {
+    height: 200px;
+}
+
+
+.show-products .box-container{
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+}
+
+.show-products .box-container .box{
+    background: #fff;
+    padding-bottom: 10%;
+
+}
+
+.edit, .delete{
+    margin: .5rem;
+    text-transform: capitalize;
+    color: #fff;
+    background: var(--col);
+    padding: .5rem 2rem;
+    border-radius: 5px;
+}
+
+.edit:hover, .delete:hover{
+    color: var(--col);
+    background: transparent;
+    border: 2px solid var(--col);
+    
+}
+
+.show-products .box .detail{
+    font-size: 14px;
+}
+.show-products .box img{
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+/*------------------media screen---------------------*/
+/* @media (max-width: 991px){
+    #menu-btn{
+        display: block;
+    }
+    .logo{
+        display: block;
+    }
+    .header .flex{
+        position: absolute;
+        top: 149%;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #aa4ff3;
+        background: #fff;
+        transition: .3s ease;
+        clip-path: polygon(0 0,100% 0,100% 0,0 0);
+    }
+    .header .flex .navbar .active{
+        clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    }
+
+} */
