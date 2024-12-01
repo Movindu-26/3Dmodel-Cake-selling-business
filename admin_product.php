@@ -50,10 +50,35 @@
             mysqli_query($conn, "DELETE FROM `cart` WHERE pid = '$delete_id'")or die('query failed');
             mysqli_query($conn, "DELETE FROM `wishlist` WHERE pid = '$delete_id'")or die('query failed');
 
+            header('location:admin_product.php');
+
         }
 
 
 
+
+/*------------updating the product----------------------*/
+if (isset($_POST['update_product'])) {
+    $update_p_id = $_POST['update_p_id'];
+    $update_p_name = $_POST['update_p_name'];
+    $update_p_price = $_POST['update_p_price'];
+    $update_p_detail = $_POST['update_p_detail'];
+    $update_p_img = $_FILES['update_p_image']['name'];
+    $update_p_img_tmp_name = $_FILES['update_p_image']['tmp_name'];
+    $update_p_img_folder = 'images/' . $update_p_img;
+
+    $update_query = mysqli_query($conn, "UPDATE `products` SET id='$update_p_id', name='$update_p_name', price='$update_p_price', product_detail='$update_p_detail', image='$update_p_img' WHERE id='$update_p_id'") or die('query failed');
+
+    if ($update_query) {
+        move_uploaded_file($update_p_img_tmp_name, $update_p_img_folder);
+        echo 'Product updated successfully!';
+    } else {
+        echo 'Failed to update product!';
+    }
+
+    header('Location: admin_product.php');
+    // exit();
+}
 ?>
 
 
@@ -69,6 +94,9 @@
 </head>
 <body>
 <?php include 'admin_header.php'; ?>
+
+
+
 <?php
         if(isset($message)){
             foreach ($message as $message){
@@ -144,11 +172,15 @@
             <input type="hidden" name="update_p_id" value="<?php echo $fetch_edit['id'];?>">
             <input type="text" name="update_p_name" value="<?php echo $fetch_edit['name'];?>">
             <input type="number" min="0" name="update_p_price" value="<?php echo $fetch_edit['price'];?>">
-            <input type="text" name="update_p_name" value="<?php echo $fetch_edit['name'];?>">
+            <textarea name="update_p_detail" ><?php echo $fetch_edit['product_detail'];?></textarea>
+            <input type="file" name="update_p_image" accept="image/jpg, image/png, image/jpeg, image/webp">
+            <input type="submit" name="update_product" value="update" class="edit">
+            <input type="reset" value="cancel" class="option-btn btn" id="close-edit">
         </form> 
         <?php               
                     }
                 }
+                echo "<script>document.querySelector('.update-container').style.display='block';</script>";
             }
         ?>
 </section>
