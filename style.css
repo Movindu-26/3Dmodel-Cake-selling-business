@@ -11,6 +11,12 @@
     --col: #060270;;
     --box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
 }
+/*----no message empty class-----*/
+.empty{
+    text-align: center;
+    text-transform:capitalize;
+    font-size: 30px;
+}
 .message{
     text-align: center;
     margin: 2rem auto;
@@ -197,6 +203,7 @@ header{
     margin: 0 auto;
     margin-top: 1rem;
 }
+
 /*---admin num of user num of pending----*/
 .title{
     font-family: "Roboto Slab", sans-serif;
@@ -238,7 +245,7 @@ header{
 
 /*-------------add product page---------------*/
 
-.add-products, .show-products{
+.add-products, .show-products, .update-container{
     background-image: url('images/pexels-vrnchndk-5140055.jpg');
     background-attachment: fixed;
     padding-top: 2%;
@@ -385,6 +392,26 @@ header{
     padding: .6rem 12%;
 }
 
+
+/*------user messages-------*/
+.user-container .box-container,
+.message-container .box-container {
+    padding: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1rem));
+}
+
+.user-container .box-container .box {
+    padding-bottom: 3rem;
+}
+
+.update-container .box-container .box span {
+    color: var(--col);
+}
+
+.update-container .box-container .box p:nth-child(4) {
+    margin-bottom: 2rem;
+}
 
 
 

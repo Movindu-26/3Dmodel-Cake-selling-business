@@ -19,9 +19,9 @@
         if (mysqli_num_rows($wishlist_number) > 0){
             $message[] = 'Product already in wishlist';
         }
-        else if(mysqli_num_rows($cart_number) > 0){
-            $message[] = 'Product already in wishlist';
-        }
+        // else if(mysqli_num_rows($cart_number) > 0){
+        //     $message[] = 'Product already in wishlist';
+        // }
         else{
             mysqli_query($conn, "INSERT INTO `wishlist`(`user_id`, `pid`, `name`, `price`, `image`) VALUES ('$user_id', '$product_id', '$product_name', '$product_price', '$product_image')") or die('query failed');
             $message[] = 'Product successfully added into wishlist';
@@ -43,11 +43,11 @@
                 $message[] = 'Product already in cart';
             }
             else{
-                mysqli_query($conn, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`, `quantity` `image`) VALUES ('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
+                mysqli_query($conn, "INSERT INTO `cart`(`user_id`, `pid`, `name`, `price`,`quantity`, `image`) VALUES ('$user_id', '$product_id', '$product_name', '$product_price', '$product_quantity', '$product_image')") or die('query failed');
                 $message[] = 'Product successfully added into cart';
             }
             header("Location: ".$_SERVER['PHP_SELF']);
-            
+            exit();
         }
 
 ?>
@@ -68,73 +68,10 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
-    <div class="slider-section">
-            <div class="slider-show-container">
-                <div class="wrapper-one">
-                    <div class="wrapper-text">inspired by cake</div>
-                </div>
-                <div class="wrapper-two">
-                    <div class="wrapper-text">fresh cakes</div>
-                </div>
-                <div class="wrapper-three">
-                    <div class="wrapper-text">delish cake</div>
-                </div>
-            </div>
-    </div>
-<!-- Card Section -->
-
-    <div class="row">
-        <div class="card">
-            <div class="detail">
-                 <span>30% OFF TODAY</span>
-                    <h1>Deelight & Delicacies</h1>
-                    <a href="shop.php">shop now</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="detail">
-                <span>30% OFF TODAY</span>
-                <h1>Deelight & Delicacies</h1>
-                <a href="shop.php">shop now</a>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="detail">
-                 <span>30% OFF TODAY</span>
-                    <h1>Deelight & Delicacies</h1>
-                    <a href="shop.php">shop now</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="categories">
-        <h1 class="title">TOP CATEGORIES</h1>
-        <div class="box-container">
-            <div class="box">
-                <img src="images/birthday cake.jpg"> <!-- for img use vertical -->
-                <span>birthday</span>
-            </div>
-            <div class="box">
-                <img src="images/anniversery.jpg">
-                <span>Anniversary</span>
-            </div>
-            <div class="box">
-                <img src="images/wedding.jpg">
-                <span>Wedding</span>
-            </div>
-            <div class="box">
-                <img src="images/christmas.jpg">
-                <span>Christmas</span>
-            </div>
-            <div class="box">
-                <img src="images/anniversery.jpg">
-                <span>Cupcakes</span>
-            </div>
-        </div>
-    </div>
-
+       <div class="banner">
+        <h1>our shop</h1>
+        <p>Best cakes in the hood</p>
+       </div> 
 
     <div class="shop">
         <h1 class="title">Shop Best sellers</h1>
@@ -183,10 +120,7 @@
         ?>
 
     </div>
-    <div class="more">
-        <a href="shop.php">load more</a>
-        <i class="bi bi-arrow-down"></i>
-    </div>
+
     </div>
 
 

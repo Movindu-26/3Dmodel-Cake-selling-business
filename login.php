@@ -86,7 +86,7 @@
             <p class="reg">Login now</p>
             <input type="email" name="email" placeholder="Enter your email" required>
             <input type="password" name="password" placeholder="Enter your password" required>
-            <input type="submit" name="submit-btn" class="btn" value="register now">
+            <input type="submit" name="submit-btn" class="btn" value="Login">
             <p style="font-family:Source Code Pro;" >Don't have an account ?  <a href="register.php">Register now</a></p>
 </form>
     </section>
